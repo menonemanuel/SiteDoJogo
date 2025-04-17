@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: Roboto, Arial;
+    color: #333;
+    font-size: 18px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Garante que a section não adicione espaçamento */
+  
+  /* Remove restrições da div container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+  
+                                        /* Flex container sem espaços laterais */
+                                        .flex {
+                                            margin: 0;
+                                            padding: 0;
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                        }
+
+/* Remove qualquer margem de colunas */
+.col {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.banner-desktop {
+    text-align: center;
+    position: relative;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
+.header {
+    background-color: #222;
+}
+
+.header-logo img {
+    height: 80px;
+}
+
+.header-menu {
+    border: 1px solid white;
+    color: white;
+    float: right;
+    font-size: 2em;
+    padding: 10px;
+    margin: 10px;
+}
+
+.header-nav {
+    border: 1px solid white;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: none;
+}
+
+.header-nav ul {
+    list-style: none;
+}
+
+.header-nav ul li {
+    padding: 10px;
+}
+
+.header-nav ul li a {
+    text-transform: uppercase;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner-mobile {
+    background-color: #333;
+    text-align: center;
+    padding-bottom: 35px;
+    display: none;
+    margin-top: 10px;
+    img {
+        width: 100%;
+    }
+    .banner-img {
+        margin: 20px;
+        width: 80%;
+    }
+    .btn {
+        text-align: center;
+    }
+}
+
+.banner-desktop img.hero-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+h2 {
+    text-align: center;
+    margin: 50px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 200px; /* cresce, encolhe e tem largura mínima */
+    max-width: 250px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.noticias {
+    background-color: #f1f1f1;
+    padding: 50px 0;
+    .flex {
+        .col {
+            border-bottom: 2px solid #ccc;
+        }
+    }
+}
+
+/* regra para telas maiores que 1000px */
+
+@media (min-width: 768px) {
+    .header {
+        .header-menu {
+            display: none;
+        }
+        .header-nav {
+            display: block;
+            float: right;
+            border: 0;
+            ul {
+                li {
+                    display: inline-block;
+                    a:hover {
+                        color: white;
+                        border-bottom: 5px solid red;
+                        padding: 27px;
+                    }
+                    a {
+                        padding: 27px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .flex {
+        display: flex;
+        .col {
+            text-align: center;
+            margin: 5px;
+            p {
+                margin: 50px;
+            }
+        }
+    }
+
+} /* final da regra */
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-conteudo {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #fff;
+}
+
+.fechar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.site-footer {
+width: 100%;
+  background-color: #111;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  margin: 0;
+  }
+  
+  .footer-content {
+    margin-top: 10px;
+max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  }
+  
+  .site-footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .instagram-link {
+    margin-top: 10px;
+  }
+  
+  .instagram-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .instagram-link img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+  
+  .instagram-link span {
+    font-size: 16px;
+  }
+  
+  .site-footer .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+  }
+
+  .container-form {
+    width: 80%;
+    margin: 50px auto;
+}
+
+form {
+    fieldset {
+        border: 1px solid #CCC;
+        border-radius: 10px;
+        padding: 15px;
+        legend {
+            font-weight: bold;
+        }
+        label {
+            margin-top: 10px;
+            display: inline-block;
+        }
+        input {
+            border: 1px solid #CCC;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        button {
+            border: 0;
+            background: red;
+            color: #FFF;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        .parsley-errors-list {
+            color: red;
+            margin-left: 20px;
+        }
+    }
+}
+
+h1, h2 {
+    margin: 30px 0;
+}
+
+.grid {
+    display: flex;
+    .col {
+        img {
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: Roboto, Arial;
+    color: #333;
+    font-size: 18px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Garante que a section não adicione espaçamento */
+  
+  /* Remove restrições da div container */
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+                                        /* Flex container sem espaços laterais */
+                                        .flex {
+                                            margin: 0;
+                                            padding: 0;
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                        }
+
+/* Remove qualquer margem de colunas */
+.col {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.banner-desktop {
+    text-align: center;
+    margin-top: 0;
+}
+
+.header {
+    background-color: #222;
+    .header-logo {
+        img {
+            height: 80px;
+        }
+    }
+    .header-menu {
+        border: 1px solid white;
+        color: white;
+        float: right;
+        font-size: 2em;
+        padding: 10px;
+        margin: 10px;
+    }
+    .header-nav {
+        border: 1px solid white;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        display: none;
+        ul {
+            list-style: none;
+            li {
+                padding: 10px;
+                a {
+                    text-transform: uppercase;
+                    color: #ccc;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.banner-desktop {
+    text-align: center;
+    margin-top: 0;
+}
+
+.banner-desktop img.hero-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.sobre {
+    text-align: center;
+    font-size: 10px;
+    font-family: fantasy;
+}

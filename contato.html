@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstro de Gel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="Dude_Monster.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="jogo.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" id="home">
+        <div class="container">
+            <a href="index.html" title="Home" class="header-logo">
+                <img src="Dude_Monster.png" alt="Monstro de Gel">
+            </a>
+
+            <a href="javascript:mostrarMenu()" title="Menu" class="header-menu">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+
+            <nav class="header-nav">
+                <ul>
+                    <li>
+                        <a href="jogo.html" title="Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="galeria.html" title="Sobre">Galeria</a>
+                    </li>
+                    <li>
+                        <a href="#noticias" title="Jogar">Jogar</a>
+                    </li>
+                    <li>
+                        <a href="contato.html" title="Contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Entre em Contato:</h1>
+        <!-- quadrado do campo para escrever -->
+        <form name="form1" method="post" action="" data-parsley-validate>
+            <fieldset>
+                <legend>Preencha os campos:</legend>
+                <!-- Fica na frente do campo -->
+                <label for="nome">Seu nome:</label>
+                <!-- Required faz com que seja obrigatório o preenchimento -->
+                <input type="text" name="nome" id="nome" required data-parsley-required-message="Preencha o nome">
+                <!-- Quebra linha -->
+                <br>
+                <label for="email">Digite o e-mail</label>
+                <input type="email" name="email" id="email" required data-parsley-required-message="Preencha o e-mail"  
+                data-parsley-type-message="Digite um e-mail válido">
+                <br>
+                <label for="nome">Sua mensagem:</label>
+                <!-- Required faz com que seja obrigatório o preenchimento -->
+                <input type="text" name="mensagem" id="mensagem" required data-parsley-required-message="Preencha a mensagem">
+
+                <button type="submit">Enviar Mensagem</button>
+            </fieldset>
+        </form>
+    </div>
+</script>
+<script src="js/vanilla-masker.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/parsley.min.js"></script>
+<script src="js/fslightbox.js"></script>
+<script>
+    cpf = document.querySelector("#cpf");
+    //Mácara para o dinheiro
+    VMasker(cpf).maskPattern("999.999.999-99");
+</script>
+<script>
+   // Espera o DOM carregar
+   document.addEventListener("DOMContentLoaded", function () {
+       const form = document.forms['form1'];
+
+       form.addEventListener("submit", function (e) {
+           e.preventDefault(); // Impede o envio real (sem recarregar a página)
+
+           if ($(form).parsley().isValid()) {
+               alert("Mensagem enviada com sucesso!");
+               form.reset(); // Limpa os campos
+           }
+       });
+   });
+</script>
+</body>
