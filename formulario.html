@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugins do JavaScript</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário com Máscaras e Validação</h1>
+        <!-- quadrado do campo para escrever -->
+        <form name="form1" method="post" action="" data-parsley-validate>
+            <fieldset>
+                <legend>Preencha os campos:</legend>
+                <!-- Fica na frente do campo -->
+                <label for="cpf">Digite o CPF</label>
+                <!-- Required faz com que seja obrigatório o preenchimento -->
+                <input type="text" name="cpf" id="cpf" required data-parsley-required-message="Preencha o CPF">
+                <!-- Quebra linha -->
+                <br>
+
+                <label for="telefone">Digite o telefone</label>
+                <input type="text" name="telefone" id="telefone" required data-parsley-required-message="Preencha o telefone">
+                <br>
+
+                <label for="data">Digite a data</label>
+                <input type="text" name="data" id="data" required data-parsley-required-message="Preencha a data">
+                <br>
+                
+                <label for="email">Digite o e-mail</label>
+                <input type="email" name="email" id="email" required data-parsley-required-message="Preencha o e-mail"  
+                data-parsley-type-message="Digite um e-mail válido">
+                <br>
+
+                <label for="email">Redigite o e-mail</label>
+                <input type="email" name="email2" id="email2" required data-parsley-required-message="Preencha o e-mail"  
+                data-parsley-type-message="Digite um e-mail válido" data-parsley-equalto="#email" 
+                data-parsley-equalto-message="Os e-mails digitados são diferentes">
+                <br>
+
+                <label for="valor">Digite um valor</label>
+                <input type="text" name="valor" id="valor" required data-parsley-required-message="Preencha o valor">
+                <br>
+
+                <button type="submit">Enviar Mensagem</button>
+            </fieldset>
+        </form>
+
+        <h1>Fullscreen Lightbox (Zoom)</h1>
+
+        <div class="grid">
+            <div class="col">
+            <a href="images/1g.jpg" title="Foto 1" data-fslightbox="galeria">
+                <img src="images/1p.jpg" alt="Foto 1">
+            </a>
+            </div>
+            <div class="col">
+                <a href="images/2g.jpg" title="Foto 2" data-fslightbox=""></a>
+            </div>
+        </div>
+    </div>
+    <script src="js/vanilla-masker.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parsley.min.js"></script>
+    <script src="js/fslightbox.js"></script>
+    <script>
+        cpf = document.querySelector("#cpf");
+        data = document.querySelector("#data");
+        telefone = document.querySelector("#telefone");
+        valor = document.querySelector("#valor");
+        //Mácara para o dinheiro
+        VMasker(valor).maskMoney();
+        VMasker(cpf).maskPattern("999.999.999-99");
+        VMasker(data).maskPattern("99/99/9999");
+        VMasker(telefone).maskPattern("(99) 99999-9999")
+    </script>
+</body>
+</html>

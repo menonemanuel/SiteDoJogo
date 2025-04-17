@@ -99,9 +99,3 @@ body {
     height: 100vh;
     object-fit: cover;
 }
-
-.sobre {
-    text-align: center;
-    font-size: 10px;
-    font-family: fantasy;
-}
